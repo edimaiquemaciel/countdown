@@ -9,13 +9,13 @@ import { CountdownContext } from '../context/CountdownContext';
 function CountDown() {
 
     const {event} = useContext(CountdownContext);
+    const [day, hour, minute, second] = useCountdown(event.date);
 
     if(!event) return <Navigate to={"/"} />;
 
     const eventTitle = event.title;
     const eventColor = event.color;
 
-    const [day, hour, minute, second] = useCountdown(event.date);
 
     return (
         <>
